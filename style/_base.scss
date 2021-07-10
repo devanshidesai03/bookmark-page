@@ -1,0 +1,170 @@
+// Typography
+body {
+    font-family: $body-family;
+  }
+  
+  html {
+    font-size: $body-text-size;
+  }
+  
+  h1,
+  h2,
+  h3,
+  p {
+    text-align: center;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  // Global
+  html {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+  }
+  
+  :focus {
+    outline: none;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $very-dark-blue;
+    width: 100%;
+  }
+  
+  .site__wrapper {
+    padding: 40px 32px;
+    width: 100%;
+    overflow: hidden;
+  
+    &--large {
+      width: 100%;
+    }
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 140px;
+  }
+  
+  p {
+    padding: 32px;
+    color: $grayish-blue;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .btn-primary {
+    @extend %button;
+    background-color: $soft-blue;
+    &:hover,
+    &:focus {
+      border: 2px solid $soft-blue;
+      color: $soft-blue;
+    }
+  }
+  
+  .btn-secondary {
+    @extend %button;
+    background-color: $soft-red;
+    &:hover,
+    &:focus {
+      border: 2px solid $soft-red;
+    }
+  }
+  
+  .btn-tertiary {
+    @extend %button;
+    background-color: $light-gray;
+    color: $grayish-blue;
+    &:hover,
+    &:focus {
+      border: 2px solid $very-dark-blue;
+    }
+  }
+  
+  .img-bg-decoration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+    max-width: 580px;
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    &::before {
+      z-index: -99999;
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1000px;
+      height: 80%;
+      border-radius: 300px;
+      background: $soft-blue;
+    }
+  }
+  
+  // Desktop Styles
+  
+  @media (min-width: $breakpoint-desktop) {
+    .site__wrapper {
+      max-width: 1440px;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    h1 {
+      font-size: 3rem;
+      text-align: left;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1rem;
+    }
+  
+    section {
+      header {
+        width: 600px;
+      }
+    }
+  }
+  

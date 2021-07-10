@@ -1,0 +1,140 @@
+.newsletter {
+    background-color: $soft-blue;
+    color: $white;
+    padding: 60px 10px;
+    margin-bottom: 0;
+  
+    p {
+      color: $white;
+      padding-bottom: 10px;
+  
+      span {
+        text-transform: uppercase;
+      }
+    }
+  
+    &__form {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+  
+      &--error {
+        display: none;
+        &.active {
+         
+          display: block;
+          position: absolute;
+          width: 100%;
+          bottom: -18px;
+          left: 0px;
+          background-color: $soft-red;
+          height: 28px;
+          font-size: 0.6rem;
+          margin: 0 0 24px 0;
+          padding: 8px;
+          border-radius: 0 0 5px 5px;
+        }
+      }
+  
+      .input-wrapper {
+        position: relative;
+  
+        svg {
+          position: absolute;
+          right: 20px;
+          bottom: 50%;
+          .icon-error {
+            display: none;
+            &.active {
+              display: block;
+              fill: $soft-red;
+              position: absolute;
+            }
+          }
+        }
+      }
+  
+      &--input {
+        padding: 20px;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 16px;
+        width: 100%;
+        border: 3px solid transparent;
+        color: $very-dark-blue;
+  
+        &.error {
+          border: 3px solid $soft-red;
+        }
+  
+        &:focus {
+          border: 3px solid $very-dark-blue;
+        }
+  
+        &::placeholder {
+          color: #c8c9d0;
+        }
+      }
+  
+      .btn-secondary {
+        &:hover,
+        &:focus {
+          color: $soft-red;
+        }
+      }
+  
+      button {
+        border: 2px solid transparent;
+        width: 100%;
+        margin: 0;
+        font-weight: 700;
+        font-size: 0.9rem;
+  
+        .btn {
+          .btn-secondary:hover {
+            color: $soft-red;
+          }
+        }
+      }
+    }
+  }
+  
+  // Desktop Styles
+  @media (min-width: $breakpoint-desktop) {
+    .newsletter {
+      padding-bottom: 72px;
+  
+      p {
+        font-size: 0.8rem;
+        margin-bottom: 24px;
+      }
+  
+      &__form {
+        width: 100%;
+        flex-direction: row;
+        margin-top: 36px;
+  
+        &--error {
+          &.active {
+            bottom: -30px;
+          }
+        }
+  
+        &--input {
+          width: 300px;
+          height: 48px;
+          font-size: 0.8rem;
+        }
+  
+        .btn {
+          font-size: 0.8rem;
+          margin-left: 16px;
+          height: 48px;
+          width: 125px;
+        }
+      }
+    }
+  }
+  
